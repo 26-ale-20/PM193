@@ -1,22 +1,26 @@
         //EJERCICIO 1 (a)
         let nombre = "Juan";
         let edad = "25";
-        const esEstudiante = true;
 
-        nombre = "Pedro";
-        edad = "25";
+        nombre = "Veronica Alejandra";
+        edad = "21";
 
-        console.log ("ejercicio 1");
-        console.log ("Nombre", nombre);
-        console.log ("Edad", edad);
-        console.log ("¿Es estudiante?", esEstudiante);
+        const saludo = "Hola, " + nombre + "Tienes " + edad + "años"
+        console.log(saludo);
 
 
+        //EJERCICO 2 
 
-        //EJERCICIO 3 (c)
+        const cuadrado = (numero) => numero * numero;
 
-        const saludar = (nombre) => "Hola, " + nombre + "!";
+        console.log(cuadrado(2));
+        console.log(cuadrado(8));
+        console.log(cuadrado(10));
 
-        console.log("ejercico 2");
-        console.log (saludar("Luis"));
+        //EJERCICIO 3 
 
+        const saludoPersonal = (nombre, edad) => {
+                return 'Hola,me llamo ${nombre} y tengo ${edad} años.';
+        };
+
+        console.log(saludoPersonal("Veronica Alejandra", 23))
