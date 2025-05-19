@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-
         //EJERCICIO 1 (a)
         let nombre = "Juan";
         let edad = "25";
@@ -21,17 +11,12 @@
         console.log ("Edad", edad);
         console.log ("¿Es estudiante?", esEstudiante);
 
-        //EJERCICIO 2 (b)
+
+
+        //EJERCICIO 3 (c)
 
         const saludar = (nombre) => "Hola, " + nombre + "!";
 
         console.log("ejercico 2");
         console.log (saludar("Luis"));
 
-        //EJERCICIO 3 (C)
-
-        const calcularEdadFutura = calcularEdadFutura(edad, 5)
-
-    </script>
-</body>
-</html>
