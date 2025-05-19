@@ -20,7 +20,7 @@
         //EJERCICIO 3 
 
         const saludoPersonal = (nombre, edad) => {
-                return 'Hola,me llamo ${nombre} y tengo ${edad} años.';
+              return `Hola, me llamo ${nombre} y tengo ${edad} años.`;
         };
 
         console.log(saludoPersonal("Veronica Alejandra", 23))
