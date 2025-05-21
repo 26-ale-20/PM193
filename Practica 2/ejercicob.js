@@ -10,3 +10,6 @@ let alto = productos.filter (p = p.precio >=1000);
 //filtro
 console.log(alto);
 
+//nombre de arreglo con nombre de los productos 
+const nombre = alto.map (pro => pro.nombre);
+console.log(nombre);
