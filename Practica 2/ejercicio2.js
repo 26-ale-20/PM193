@@ -8,4 +8,4 @@ const persona = {
 };
 
 // Destructuracion aqui 
-const personadatos = {nombre, edad, direccion}  
+const personadatos = {nombre, edad, direccion} = persona;
