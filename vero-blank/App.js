@@ -14,6 +14,8 @@ const Texto= ()=>{
 
 /*ZONa2: Main */
 export default function App() {
+  const [cambiarBoton, setcambairBoton]=useState('Presionar')
+  const actualizaBoton=()=>{setcambairBoton('Cambiado')}
   return (
 
     <View style={styles.container}>
@@ -21,7 +23,7 @@ export default function App() {
     <Texto></Texto>
     <Texto></Texto>
     <Texto></Texto>
-      <Button title='Presionar'></Button>
+      <Button title = {cambiarBoton} onPress={actualizaBoton}>{cambiarBoton}</Button>
       <StatusBar style="auto" />
     </View>
 
