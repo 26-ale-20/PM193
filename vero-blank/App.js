@@ -35,17 +35,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection:'row-reverse'
+    alignItems: 'strech',// izqierda a derecha
+    justifyContent: 'center', //Arriba a abajo 
+   
   },
    text:{
     color:'white',
     fontSize:27,
-    height:150,
-    width:150,
+  
   },
-  azul:{backgroundColor:'blue', flex:1},
-  rojo:{backgroundColor:'red',flex:3},
-  negro:{backgroundColor:'black',flex:2},
+  azul:{backgroundColor:'blue'},
+  rojo:{backgroundColor:'red'},
+  negro:{backgroundColor:'black'},
 });
