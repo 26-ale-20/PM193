@@ -1,31 +1,56 @@
 /*ZONa1: Impotaciones */
 import { StatusBar } from 'expo-status-bar';
-import { Children } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert, ScrollView, Touchable, TouchableOpacity, TouchableHighlight, TouchableNativeFeedback, Pressable, Switch } from 'react-native';
 import React, {useState} from 'react';
+import { Button as ButtonPaper, Provider as ProveedorPaper } from 'react-native-paper';
+import { Button as ButtonElements } from 'react-native-elements';
 
-const Texto= ({style})=>{
-  const [contenido,setContenido]=useState('Hola mundo')
-  const actualizaTexto=()=>{setContenido('Estado Modificado')}
-  return(
-    <Text style={[styles.text,style]} onPress={actualizaTexto}>{contenido}</Text>
-  )
-}
 
 /*ZONa2: Main */
-export default function App() {
-  const [cambiarBoton, setcambairBoton]=useState('Presionar')
-  const actualizaBoton=()=>{setcambairBoton('Cambiado')}
+export default function App() { 
+  const [modoOscuro, setModoOscuro] = useState(false);
+  const alternarModoOscuro = () => setModoOscuro(previo => !previo);
+
   return (
+     <ProveedorPaper>
+      <ScrollView contentContainerStyle={styles.ScrollContainer}>
+        <View style={[styles.container, {backgroundColor: modoOscuro ?'#111' : '#fff'} ]}> </View>
+        <View style= {styles.container}>
+          <Text style={styles=title}>Modo de Pantalla: {modoOscuro ? 'oscuro' : 'claro'}</Text>
+          <Switch value={modoOscuro} onValueChange={alternarModoOscuro}/>
+        </View>
 
-    <View style={styles.container}>
+        <View style={styles.section}>
+          <Text style={styles.title}> Primer Boton</Text>
+          <Button>
+            title="Boton Nativo"
+            color="#007bff"
+            OnPress={() => window.alert('Boton Nativo Presionado')}
+          </Button>
+        </View>
 
-    <Texto style={styles.azul}></Texto>
-    <Texto style={styles.rojo}></Texto>
-    <Texto style={styles.negro}> </Texto>
-    
-      <StatusBar style="auto" />
-    </View>
+        <View style={styles.section}>
+          <TouchableOpacity
+          style={[styles.btn, {backgroundColor: '28a745'}]}
+          onPress={() => window.alert('TouchebleOpacity')}>
+            <Text style={styles.btnText}>TouchableOpacity</Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Boton 3 */}
+        <View style={styles.section}>
+          <Text style={styles.title}>Boton 3</Text>
+          <TouchableHighlight
+          style={[styles.btn, {backgroundColor: 'ffc107'}]}
+          underlayColor="#e0a800"
+          onPress={() => Alert.alert('boton 3')}>
+            <Text style={styles.btnText}>TouchableHighlight</Text>
+          </TouchableHighlight>
+      
+        </View>
+        
+      </ScrollView>
+     </ProveedorPaper>
 
   );
 }
@@ -34,17 +59,22 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'strech',// izqierda a derecha
-    justifyContent: 'center', //Arriba a abajo 
+    alignItems: 'strech',
+    paddingHorizintal: 16,
+    paddingBottom: 50// izqierda a derecha
    
   },
-   text:{
-    color:'white',
-    fontSize:27,
+ title: {
+  fontSize: 16, 
+  marginVertical: 6,
+  textAlign: 'center',
+  color: '#000'
+ },
+
+ Section: {
+  marginVertical: 15,
+  alignItems: 'center',
+  width: '100%'
+ }
   
-  },
-  azul:{backgroundColor:'blue'},
-  rojo:{backgroundColor:'red'},
-  negro:{backgroundColor:'black'},
 });
