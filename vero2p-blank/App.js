@@ -94,7 +94,7 @@ export default function App() {
           </Pressable>
         </View>
 
-        {/* Modal Personalizado */}
+        {/* Modal */}
         <Modal
           animationType="fade"
           transparent={true}
