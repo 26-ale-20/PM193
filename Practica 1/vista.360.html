@@ -1,0 +1,766 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Generalizada 360</title>
+    <!-- <link rel="stylesheet" type="text/css" href="/WebResources/lsf_estilos_vista360"> -->
+
+    <style>
+        .section {
+            display: none;
+            /* Oculta todas las secciones */
+        }
+
+        .section.visible {
+            display: block;
+            /* Muestra la sección activa */
+        }
+
+        body {
+            background-color: rgb(230, 230, 230);
+        }
+    </style>
+<meta><meta><meta><meta><meta></head>
+
+<body>
+    <div class="mx-2 py-8 mt-4 border py-4 bg-white">
+        <select class="ml-8 text-sm" name="" id="">
+            <option class="text-sm" selected="" disabled="">Criterio de busqueda</option>
+            <option class="text-sm">No. Cliente</option>
+            <option class="text-sm">No. Cuenta</option>
+            <option class="text-sm">Cliente</option>
+            <option class="text-sm">No. Crédito</option>
+        </select>
+        <input type="text" class="ml-4 border rounded px-2">
+        <button class="ml-8 px-4 bg-blue-500 rounded hover:bg-blue-400 w-32 text-white" onclick="botonBusqueda()">Buscar</button>
+        <button class="ml-8 px-4 bg-rose-600 rounded hover:bg-rose-400 w-32 text-white" onclick="botonSalir()">Salir</button>
+    </div>
+
+
+    <div class="mx-2 my-2 border bg-white">
+        <div class="grid grid-cols-4 ml-8 my-8">
+            <div>
+                <p class="font-bold">Nombre</p>
+                <p class="text-sm text-slate-300 italic">No. Cliente</p>
+            </div>
+            <div>
+                <p class="font-bold">Nombre</p>
+                <p class="text-sm text-slate-300 italic">No. Cuenta</p>
+            </div>
+            <div>
+                <p class="font-bold">Nombre</p>
+                <p class="text-sm text-slate-300 italic">Cliente</p>
+            </div>
+            <div>
+                <p class="font-bold">Nombre</p>
+                <p class="text-sm text-slate-300 italic">No. Crédito</p>
+            </div>
+        </div>
+        <ul class="ml-8 flex justify-start">
+            <li>
+                <button class="text-sm p-2 hover:border-b-4 focus:border-b-4 border-blue-600 focus:bg-blue-50" onclick="mostrarSeccion(this)" id="section-1-btn">Detalle Línea de Crédito</button>
+            </li>
+            <li>
+                <button class="text-sm p-2 hover:border-b-4 focus:border-b-4 border-blue-600 focus:bg-blue-50" onclick="mostrarSeccion(this)" id="section-2-btn">Vista Generalizada</button>
+            </li>
+            <li>
+                <button class="text-sm p-2 hover:border-b-4 focus:border-b-4 border-blue-600 focus:bg-blue-50" onclick="mostrarSeccion(this)" id="section-3-btn">Resumen de Movimientos</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="" id="seccion-principal" style="display: none;">
+        <!-- Seccioón Detalle de Linea de Crédito -->
+        <div class="section border mx-2 bg-white" id="section-1">
+            <div class="mx-2 my-8">
+                <!-- <p class="py-4 text-center">Detalle de Liena de Crédito</p> -->
+                <div class="grid grid-cols-2 mx-4">
+                    <div class="px-4 mb-4">
+                        <hr class="border border-slate-300">
+                    </div>
+                    <div class="px-4 mb-4">
+                        <hr class="border border-slate-300">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 px-4">
+                    <div class="h-full border-l border-r">
+                        <div class="grid grid-rows-[repeat(3,auto)] px-4">
+                            <div class="grid grid-cols-10">
+                                <label class="col-span-7 text-sm font-[Open_Sans]">Plan de Pagos</label>
+                                <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                                <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                            </div>
+                            <div class="grid grid-cols-10">
+                                <label class="col-span-7 text-sm font-[Open_Sans]">Id Disposicion de Credito</label>
+                                <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                                <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                            </div>
+                            <div class="grid grid-cols-10">
+                                <label class="col-span-7 text-sm font-[Open_Sans]">Cuenta Clabe</label>
+                                <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                                <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h-full border-r">
+                        <div class="grid grid-rows-[repeat(3,auto)] px-4">
+                            <div class="grid grid-cols-10">
+                                <label class="col-span-7 text-sm font-[Open_Sans]">Telefono Celular</label>
+                                <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                                <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                            </div>
+                            <div class="grid grid-cols-10">
+                                <label class="col-span-7 text-sm font-[Open_Sans]">Id Linea de Credito</label>
+                                <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                                <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                            </div>
+                            <div class="grid grid-cols-10">
+                                <label class="col-span-7 text-sm font-[Open_Sans]">Solicitud de credito</label>
+                                <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                                <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                            </div>
+                            <div class="grid grid-cols-10">
+                                <label class="col-span-7 text-sm font-[Open_Sans]">Ejecutivo sucursal</label>
+                                <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                                <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seccioón Vista Generalizada -->
+        <div class="section border mx-2 mb-4 bg-white" id="section-2">
+
+            <!-- Sección de Titulos -->
+            <div class="grid grid-cols-3 mx-4 mt-4">
+                <div class="px-4">
+                    <p class="text-center mb-4 font-bold">Generales de Contratación</p>
+                    <hr class="border border-slate-300 mb-4">
+                </div>
+                <div class="px-4">
+                    <p class="text-center mb-4 font-bold">Saldos</p>
+                    <hr class="border border-slate-300 mb-4">
+                </div>
+                <div class="px-4">
+                    <p class="text-center mb-4 font-bold">Estatus</p>
+                    <hr class="border border-slate-300 mb-4">
+                </div>
+            </div>
+
+            <!-- Sección de información -->
+            <div class="grid grid-cols-3 items-start px-4 pb-8">
+
+                <!-- Generales de contratación -->
+                <div class="h-full border-l border-r">
+                    <div class="grid grid-rows-[repeat(15,auto)] px-4">
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Monto de la Línea</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Fecha de Apertura</label>
+                            <label class="col-span-1 text-right text-sm font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Sucursal</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Día de corte</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Día de Pago</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">% Tasa de Interés Ordinario Anual</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">% IVA Interés Ordinario</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">% Tasa de Interés Moratorio</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">% IVA Interés Moratorio</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Comisión por Apertura</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">IVA Comisión por Apertura</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Anualidad</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">IVA Anualidad</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Plan de pagos Origen</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Saldo del Crédito Liquidado</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Saldos -->
+                <div class="border-r h-full">
+                    <div class="grid grid-rows-[repeat(15,auto)] px-4">
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Capital Dispuesto</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">******Capital Pendiente de Pago</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Monto Disponible de la Línea</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Total Interés Ordinario</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">******Interés Ordinario Pendiente</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">******Interes Ordinario del Periodo en
+                                Curso</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Total IVA Interés Ordinario</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">******IVA Interés Ordinario
+                                Pendiente</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">******IVA Interes Ordinario del Periodo
+                                en
+                                Curso</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Total Interés Moratorio</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">******Interés Moratorio Pendiente</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">******Interés Moratorio del Periodo en
+                                Curso</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Total IVA Interés Moratorio</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">******IVA Interés Ordinario
+                                Pendiente</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">******IVA Interés Ordinario del Periodo
+                                en
+                                Curso</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Estatus -->
+                <div class="h-full border-r">
+                    <div class="grid grid-rows-[repeat(15,auto)] px-4">
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">SItuación de Cartera</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Situación de la Línea</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Estatus de la Línea</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Fecha de Último Corte</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Fecha de Próximo Pago</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Días Mora</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">No. de Pagos sin Cubrir</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Comisión por Apertura Pagado</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Comisión por Apertura por Pagar</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Anualidad Pagado</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Anualidad por Pagar</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Total para Regularizar/Pago
+                                Mínimo</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Total para Liquidar</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="my-8">
+                            <p class="text-center font-bold">Comisiones</p>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Gastos de Cobranza</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">IVA Gastos de Cobranza</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Días de Gracia (Gastos de
+                                Cobranza)</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Com. por Apertura/Anualidad a
+                                Pagar</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">IVA Com. por Apertura/Anualidad a
+                                Pagar</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]"># de Pago Com. por Ap/Anualidad</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seccioón Resumen de Movimientos -->
+        <div class="section border mx-2 mb-4 bg-white" id="section-3">
+
+            <!-- Sección de titulos -->
+            <p class="py-4 text-center font-bold">Pagos Recibidos</p>
+            <div class="grid grid-cols-2 mx-4">
+                <div class="px-4 mb-4">
+                    <hr class="border border-slate-300">
+                </div>
+                <div class="px-4 mb-4">
+                    <hr class="border border-slate-300">
+                </div>
+            </div>
+
+            <!-- Sección Pagos recibidos -->
+            <div class="grid grid-cols-2 items-start px-4">
+                <div class="h-full border-l border-r">
+                    <div class="grid grid-rows-[repeat(7,auto)] px-4">
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Capital</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Int. Ordinario</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Int. Moratorio</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Comision por Apertura</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Anualidad</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Gastos de Cobranza</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Total Pagado</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-full border-r">
+                    <div class="grid grid-rows-[repeat(7,auto)] px-4">
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">IVA de Int. Ordinario</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">IVA de Int. Moratorio</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">IVA Com. por Apertura</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">IVA de Anualidad</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">IVA de Gastos de Cob.</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tablda detalles de Pago -->
+            <div class="px-4 mt-8">
+                <p class="py-4 text-center font-bold">Detalle de Pagos</p>
+                <div class="border mx-2 rounded rounded-4 mb-4">
+                    <table class="table-auto w-full">
+                        <thead class="border-b-2 border-slate-300">
+                            <tr>
+                                <th class="text-sm font-[Open_Sans]">Nombre</th>
+                                <th class="text-sm font-[Open_Sans]">Fecha de Pago</th>
+                                <th class="text-sm font-[Open_Sans]">Desglose por Capital</th>
+                                <th class="text-sm font-[Open_Sans]">Interes</th>
+                                <th class="text-sm font-[Open_Sans]">IVA</th>
+                                <th class="text-sm font-[Open_Sans]">Moratorio</th>
+                                <th class="text-sm font-[Open_Sans]">IVA Int. Moratorio</th>
+                                <th class="text-sm font-[Open_Sans]">Comisiones</th>
+                                <th class="text-sm font-[Open_Sans]">IVA Comisiones</th>
+                                <th class="text-sm font-[Open_Sans]">Total Pagado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    Fabian Trujillo
+                                    Segura</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    30/06/2025</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    Desglose</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    15%
+                                </td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    10%
+                                </td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    Moratorio</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    12%
+                                </td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    1,500</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    20%
+                                </td>
+                                <td class="text-center text-sm font-[Open_Sans]">35,000</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    Fabian Trujillo
+                                    Segura</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    30/06/2025</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    Desglose</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    15%
+                                </td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    10%
+                                </td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    Moratorio</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    12%
+                                </td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    1,500</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    20%
+                                </td>
+                                <td class="text-center text-sm font-[Open_Sans]">35,000</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sección Disposiciones -->
+            <div class="mx-4">
+                <p class="py-4 text-center font-bold">Disposiciones</p>
+                <hr class="border-t-2 border-slate-300 mx-4 pb-2">
+            </div>
+
+            <div class="grid grid-cols-2 items-start mx-4 border-r">
+                <div class="h-full border-l">
+                    <div class="grid grid-rows-[repeat(7,auto)] px-4">
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Monto de la Línea</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Capital Dispuesto</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+
+                        <div class="grid grid-cols-10">
+                            <label class="col-span-7 text-sm font-[Open_Sans]">Capital Disponible</label>
+                            <label class="col-span-1 text-sm text-right font-[Open_Sans]">$</label>
+                            <label class="col-span-2 text-sm font-[Open_Sans] text-right">200</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección detalle de las disposiciones -->
+            <div class="px-4 my-8">
+                <p class="py-4 text-center font-bold">Detalle de las Disposiciones</p>
+                <div class="border mx-2 rounded rounded-4 mb-4">
+                    <table class="table-auto w-full">
+                        <thead class="border-b-2 border-slate-300">
+                            <tr>
+                                <th class="text-sm font-[Open_Sans]">Nombre</th>
+                                <th class="text-sm font-[Open_Sans]">Fecha de Disposición</th>
+                                <th class="text-sm font-[Open_Sans]">Monto de la disposición</th>
+                                <th class="text-sm font-[Open_Sans]">Medio de Disposición</th>
+                                <th class="text-sm font-[Open_Sans]">Fecha de Creación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    Fabian
+                                    TrujilloSegura</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    30/06/2025</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    10,000</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    Dynamics 365</td>
+                                <td class="text-center text-sm font-[Open_Sans]">21/12/1996</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    Fabian
+                                    TrujilloSegura</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    30/06/2025</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    10,000</td>
+                                <td class="text-center border-r border-slate-300 border-dashed text-sm font-[Open_Sans]">
+                                    Dynamics 365</td>
+                                <td class="text-center text-sm font-[Open_Sans]">21/12/1996</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        const informacionGeneral = {
+            "DetalleLineaCredito": {
+                "planPagos": "Input plan",
+                "idDisposicionCredito": "1",
+                "cuentaClabe": "001"
+            },
+            "VistaGeneralizada": {
+                "GeneralesDeContratacion": {
+                    "montoLinea": "100",
+                    "fechaApertura": "21/12/1996",
+                    "sucursal": "El Pueblito"
+                },
+                "Saldos": {
+                    "capitalDispuesto": "100",
+                    "capitalPendientePago": "200"
+                },
+                "Estatus": {
+                    "situacionCartera": "Activo",
+                    "situacionLinea": "Inactivo"
+                },
+                "Comisiones": {
+                    "gastosCobranza": "15000",
+                    "ivaGastosCobranza": "1,200"
+                }
+            },
+            "ResumenMovimientos": {
+                "PagosRecibos": {},
+                "DetallesPagos": {},
+                "Disposiciones": {},
+                "DetalleDisposiciones": {}
+            }
+        }
+
+        function asignarValoresInput(informacionGeneral) {
+            const arbolInformacion = Object.keys(informacionGeneral);
+
+            arbolInformacion.forEach(element => {
+                console.log(element);
+            });
+
+        }
+
+        function mostrarSeccion(button) {
+            // Desactiva todos los botones
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-blue-50', 'border-b-4');
+            });
+
+            // Activa unicamente botón seleccionado
+            button.classList.add('bg-blue-50', 'border-b-4');
+
+            // Oculta todas las secciones
+            const secciones = document.querySelectorAll('.section');
+            secciones.forEach(seccion => {
+                seccion.classList.remove('visible');
+            });
+
+            // Muestra unicamente la sección seleccionada
+            const seccionMostrar = document.getElementById(button.id.replace('-btn', ''));
+            if (seccionMostrar) {
+                seccionMostrar.classList.add('visible');
+            }
+        }
+
+        // En la primera carga de la Página muestra la sección 1
+        window.onload = () => {
+            mostrarSeccion(document.getElementById('section-1-btn'));
+            asignarValoresInput(informacionGeneral);
+        };
+
+        function botonBusqueda() {
+            const seccionPrincipal = document.getElementById("seccion-principal");
+            seccionPrincipal.style.display = "block";
+        }
+
+        function botonSalir() {
+            const seccionPrincipal = document.getElementById("seccion-principal");
+            seccionPrincipal.style.display = "none";
+        }
+
+    </script>
+
+
+
+</body></html>
