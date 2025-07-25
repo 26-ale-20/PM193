@@ -24,6 +24,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "90dd5608-915c-4b4c-a984-ff6159feb444"
+      }
+    },
+    "owner": "veronicaaleeee",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/90dd5608-915c-4b4c-a984-ff6159feb444"
     }
   }
 }
